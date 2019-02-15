@@ -1,4 +1,4 @@
-FROM php:7.2-zts-alpine
+FROM php:7.2-zts-alpine3.8
 LABEL Description="Application container"
 
 ENV PS1='\[\033[1;32m\]🐳 \[\033[1;36m\][\u\033[38;05;224m@\h\[\033[1;36m\]] \[\033[1;34m\]\w\[\033[0;35m\] \[\033[1;36m\]# \[\033[0m\]'
@@ -67,7 +67,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
         --with-png-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure bcmath --enable-bcmath \
-    && docker-php-ext-configure gmp --enable-gmp \
+    # && docker-php-ext-configure gmp --enable-gmp \
     && docker-php-ext-configure intl --enable-intl \
     && docker-php-ext-configure pcntl --enable-pcntl \
     && docker-php-ext-configure mysqli --with-mysqli \
