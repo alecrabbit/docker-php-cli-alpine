@@ -1,1 +1,1 @@
-php-alpine
+php-cli-alpine
